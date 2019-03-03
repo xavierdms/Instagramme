@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -43,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (e != null) {
+                    Toast.makeText(LoginActivity.this, "Login error", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Issue with login");
                     e.printStackTrace();
                     return;
@@ -54,7 +56,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void goMainActivity() {
+        Log.d(TAG, "Navigating to Main Activity");
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
+        finish();
     }
 }
