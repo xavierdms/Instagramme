@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -20,11 +21,17 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
+    private Button btnSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            goMainActivity();
+        }
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
@@ -35,6 +42,16 @@ public class LoginActivity extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
                 login(username,password);
+            }
+        });
+
+        btnSignup = findViewById(R.id.btnSignup);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+                signup(username,password);
             }
         });
     }
@@ -49,7 +66,30 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
                     return;
                 }
-                //TODO: navigate to new activity if the user has signed properly
+                //navigate to new activity if the user has signed properly
+                goMainActivity();
+            }
+        });
+    }
+
+    private void signup(String username, String password){
+        // Create the ParseUser
+        ParseUser user = new ParseUser();
+        // Set core properties
+        user.setUsername(username);
+        user.setPassword(password);
+        //user.setEmail("email@example.com");
+
+        // Invoke signUpInBackground
+        user.signUpInBackground(new SignUpCallback() {
+            public void done(ParseException e) {
+                if (e != null) {
+                    Toast.makeText(LoginActivity.this, "Username already exists", Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "Signup error");
+                    e.printStackTrace();
+                    return;
+                }
+                //navigate to new activity if the user has signed properly
                 goMainActivity();
             }
         });

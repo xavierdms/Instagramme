@@ -3,4 +3,5 @@
     <string name="hintUsername">Username</string>
     <string name="hintPassword">Password</string>
     <string name="login">Login</string>
+    <string name="signup">Sign up</string>
 </resources>
