@@ -7,12 +7,30 @@
     tools:context=".LoginActivity"
     android:background="@drawable/gradient_background">
 
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@color/white_10_transparent"
+        android:ems="10"
+        android:hint="@string/hintEmail"
+        android:inputType="textEmailAddress"
+        android:paddingStart="20dp"
+        android:textColorHint="@color/white_60_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
         android:background="@color/white_10_transparent"
         android:ems="10"
@@ -23,21 +41,21 @@
         android:textColorHint="@color/white_60_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/etPasswordLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="64dp"
+        android:textColorHint="@color/white_60_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsername"
-        android:textColorHint="@color/white_60_transparent"
-        app:passwordToggleTint="@color/white_20_transparent"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white_20_transparent">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/etPassword"
@@ -51,21 +69,23 @@
             android:paddingEnd="20dp" />
     </android.support.design.widget.TextInputLayout>
 
+
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSignup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
         android:background="@drawable/button_border"
-        android:text="@string/login"
+        android:text="@string/signup"
         android:textAllCaps="false"
-        android:textSize="16dp"
         android:textColor="@color/white_40_transparent"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout" />
+
 
     <View
         android:id="@+id/vBar"
@@ -79,7 +99,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
     </View>
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
@@ -98,21 +117,21 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Don't have an account?"
+        android:text="Already have an account?"
         android:textColor="@color/white_60_transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vBar" />
 
     <Button
-        android:id="@+id/btnCreateAcc"
+        android:id="@+id/btnStartLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="16dp"
         android:background="@color/transparent"
-        android:text="Sign up."
+        android:text="Log in."
         android:textAllCaps="false"
         android:textColor="@color/black_60_transparent"
         app:layout_constraintBottom_toBottomOf="parent"

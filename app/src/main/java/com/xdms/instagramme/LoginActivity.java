@@ -20,8 +20,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etUsername;
     private EditText etPassword;
+    private EditText etEmail;
     private Button btnLogin;
     private Button btnSignup;
+    private Button btnCreateAcc;
+    private Button btnStartLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,27 +36,25 @@ public class LoginActivity extends AppCompatActivity {
             goMainActivity();
         }
 
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_start);
+
+        btnCreateAcc = findViewById(R.id.btnCreateAcc);
+        btnCreateAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
-                login(username,password);
+                startSignup();
+
             }
         });
 
-        btnSignup = findViewById(R.id.btnSignup);
-        btnSignup.setOnClickListener(new View.OnClickListener() {
+        btnStartLogin = findViewById(R.id.btnStartLogin);
+        btnStartLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
-                signup(username,password);
+                startLogin();
             }
         });
+
     }
 
     private void login(String username, String password){
@@ -100,5 +101,50 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
         finish();
+    }
+
+    private void startLogin() {
+        setContentView(R.layout.activity_login);
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+                login(username,password);
+            }
+        });
+        btnCreateAcc = findViewById(R.id.btnCreateAcc);
+        btnCreateAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSignup();
+            }
+        });
+    }
+
+    private void startSignup() {
+        setContentView(R.layout.activity_signup);
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        etEmail = findViewById(R.id.etEmail);
+        btnSignup = findViewById(R.id.btnSignup);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+                signup(username,password);
+            }
+        });
+        btnStartLogin = findViewById(R.id.btnStartLogin);
+        btnStartLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startLogin();
+            }
+        });
     }
 }

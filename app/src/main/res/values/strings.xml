@@ -2,6 +2,8 @@
     <string name="app_name">Instagramme</string>
     <string name="hintUsername">Username</string>
     <string name="hintPassword">Password</string>
-    <string name="login">Login</string>
-    <string name="signup">Sign up</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="create_acc">Create New Account</string>
+    <string name="hintEmail">E-Mail</string>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="@color/iglive_ssi_banner_gradient_start_opaque"
+        android:centerColor="@color/iglive_ssi_banner_gradient_center_opaque"
+        android:endColor="@color/iglive_ssi_banner_gradient_end_opaque"
+        android:angle="315" />
+</shape>
