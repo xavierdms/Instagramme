@@ -6,4 +6,8 @@
     <string name="signup">Sign Up</string>
     <string name="create_acc">Create New Account</string>
     <string name="hintEmail">E-Mail</string>
+    <string name="log_out">Log out</string>
+    <string name="take_a_picture">Take a picture</string>
+    <string name="hintDescription">Description...</string>
+    <string name="post">Post</string>
 </resources>

@@ -73,19 +73,19 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void signup(String username, String password){
+    private void signup(String username, String password, String email){
         // Create the ParseUser
         ParseUser user = new ParseUser();
         // Set core properties
         user.setUsername(username);
         user.setPassword(password);
-        //user.setEmail("email@example.com");
+        user.setEmail(email);
 
         // Invoke signUpInBackground
         user.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e != null) {
-                    Toast.makeText(LoginActivity.this, "Username already exists", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Username or e-mail already in use", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Signup error");
                     e.printStackTrace();
                     return;
@@ -136,7 +136,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
-                signup(username,password);
+                String email = etEmail.getText().toString();
+                signup(username,password,email);
             }
         });
         btnStartLogin = findViewById(R.id.btnStartLogin);

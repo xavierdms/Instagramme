@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+    private Button btnLogout;
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
@@ -73,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 savePost(description, user, photoFile);
+            }
+        });
+
+        btnLogout = findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut();
+                //ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+                Log.d(TAG, "Navigating to Login Activity");
+                Intent i = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(i);
+                finish();
             }
         });
     }
@@ -180,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 Log.d(TAG, "Successfully created post");
+                Toast.makeText(MainActivity.this, "Posted!", Toast.LENGTH_SHORT).show();
                 etDescription.setText("");
                 ivPostImage.setImageResource(0);
             }

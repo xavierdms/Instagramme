@@ -163,7 +163,7 @@
     <color name="grey_9">#ff262626</color>
     <color name="grey_9_30_transparent">#4d262626</color>
     <color name="ig_led_color">#fff4bb41</color>
-    <color name="ig_purple">#ffc40092</color>
+    <color name="ig_purple">#C40092</color>
     <color name="ig_red">#ffe40031</color>
     <color name="ig_yellow">#ffffd521</color>
     <color name="iglive_ssi_banner_gradient_end">#99585bc2</color>
@@ -199,7 +199,7 @@
     <color name="pill_background_outline_pressed">#4d000000</color>
     <color name="pill_background_pressed">#d9c9cbcc</color>
     <color name="pink_0">#fffff0f7</color>
-    <color name="pink_1">#ffffd2e8</color>
+    <color name="pink_1">#FFD2E8</color>
     <color name="pink_2">#ffff98c9</color>
     <color name="pink_3">#ffff5dab</color>
     <color name="pink_4">#fff52c8d</color>
@@ -220,9 +220,9 @@
     <color name="purple_4">#ffca2ee1</color>
     <color name="purple_5">#ffa307ba</color>
     <color name="purple_6">#ff7e0091</color>
-    <color name="purple_7">#ff5d006b</color>
+    <color name="purple_7">#5D006B</color>
     <color name="purple_8">#ff3b0044</color>
-    <color name="purple_9">#ff2a0031</color>
+    <color name="purple_9">#2A0031</color>
     <color name="quick_capture_next_button_text_color">@color/grey_9</color>
     <color name="red_0">#fffff5f5</color>
     <color name="red_1">#ffffe0e2</color>

@@ -88,7 +88,7 @@
 
 
     <View
-        android:id="@+id/vBar"
+        android:id="@+id/vBarTop"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginBottom="50dp"
@@ -121,7 +121,7 @@
         android:textColor="@color/white_60_transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vBar" />
+        app:layout_constraintTop_toBottomOf="@+id/vBarTop" />
 
     <Button
         android:id="@+id/btnStartLogin"
@@ -137,5 +137,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/vBar" />
+        app:layout_constraintTop_toBottomOf="@+id/vBarTop" />
 </android.support.constraint.ConstraintLayout>
