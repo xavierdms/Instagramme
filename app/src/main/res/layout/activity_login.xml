@@ -20,7 +20,10 @@
         android:hint="@string/hintUsername"
         android:inputType="textPersonName|text"
         android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/white_70_transparent"
         android:textColorHint="@color/white_60_transparent"
+        android:textColorLink="@color/ig_led_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -30,14 +33,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsername"
-        android:textColorHint="@color/white_60_transparent"
-        app:passwordToggleTint="@color/white_20_transparent"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white_20_transparent">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/etPassword"
@@ -48,7 +51,10 @@
             android:hint="@string/hintPassword"
             android:inputType="textPassword"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp" />
+            android:paddingEnd="20dp"
+            android:textColor="@color/white_70_transparent"
+            android:textColorHint="@color/white_60_transparent"
+            android:textColorLink="@color/ig_led_color" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
