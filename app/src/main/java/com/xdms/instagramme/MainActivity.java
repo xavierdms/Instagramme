@@ -7,9 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.xdms.instagramme.fragments.ComposeFragment;
+import com.xdms.instagramme.fragments.PostsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,17 +56,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_home:
                     default:
                         // TODO: swap fragment here
-                        fragment = new ComposeFragment();
-                        Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                        fragment = new PostsFragment();
                         break;
                     case R.id.action_compose:
                         fragment = new ComposeFragment();
-                        Toast.makeText(MainActivity.this, "Compose", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_profile:
                         // TODO: swap fragment here
                         fragment = new ComposeFragment();
-                        Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
