@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background= "@color/solid_white"
     >
 
     <item
         android:id="@+id/action_home"
-        android:icon="@drawable/instagram_home_outline_24"
-        android:title="Home"
+        android:icon="@drawable/instagram_home_filled_24"
         app:showAsAction="always"
-        android:background= "@color/solid_white"/>
+        android:title="@string/homeButton" />
     <item
         android:id="@+id/action_compose"
-        android:icon="@drawable/instagram_new_post_outline_24"
-        android:title="Compose"
+        android:icon="@drawable/instagram_new_post_filled_24"
         app:showAsAction="always"
-        />
+        android:title="@string/composeButton"/>
     <item
         android:id="@+id/action_profile"
-        android:icon="@drawable/instagram_user_outline_24"
-        android:title="Profile"
-        app:showAsAction="always" />
+        android:icon="@drawable/instagram_user_filled_24"
+        app:showAsAction="ifRoom"
+        android:title="@string/profileButton"/>
 </menu>
